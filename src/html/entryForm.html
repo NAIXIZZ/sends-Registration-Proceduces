@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报名表</title>
+    <link rel="stylesheet" href="../css/entryForm.css">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="sign_in">
+            <form action="../php/form.php" method="POST">
+                <hr>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;姓名：&nbsp;&nbsp;&nbsp;</span>
+                <input type="text" name="name" class="name">
+                <hr>
+                <hr><span>&nbsp;&nbsp;&nbsp;&nbsp;学号：&nbsp;&nbsp;&nbsp;</span>
+                <input type="text" name="id" class="id">
+                <hr>
+                <hr><span>电话号码：</span>
+                <input type="text" name="phone" class="phone">
+                <hr>
+                <hr><span>&nbsp;QQ号码：</span>
+                <input type="text" name="qq" class="qq">
+                <hr>
+                <hr><span>&nbsp;&nbsp;&nbsp;&nbsp;校区：&nbsp;&nbsp;&nbsp;</span>
+                <select name="campus" id="campus">
+                    <option value="1">厦门校区</option>
+                    <option value="2">泉州校区</option>
+                    <option value="3">龙舟池校区</option>
+                    <option value="0" selected></option>
+                </select>
+                <hr>
+                <hr><span>&nbsp;&nbsp;&nbsp;&nbsp;学院：&nbsp;&nbsp;&nbsp;</span>
+                <select name="academy" id="academy">
+                    <option value="1">计算机</option>
+                    <option value="2">计算机</option>
+                    <option value="3">计算机</option>
+                    <option value="0" selected></option>
+                </select>
+                <hr>
+                <hr><span>&nbsp;&nbsp;&nbsp;&nbsp;专业：&nbsp;&nbsp;&nbsp;</span>
+                <select name="profession" id="profession">
+                    <option value="1">计科</option>
+                    <option value="2">计科</option>
+                    <option value="3">计科</option>
+                    <option value="0" selected></option>
+                </select>
+                <hr>
+                <hr><span>第一志愿：</span>
+                <select name="firstVolunteer" id="firstVolunteer">
+                    <option value="1">软件部</option>
+                    <option value="2">策划部</option>
+                    <option value="3">运营部</option>
+                    <option value="0" selected></option>
+                </select>
+                <hr>
+                <hr><span>第二志愿：</span>
+                <select name="secondVolunteer" id="secondVolunteer">
+                    <option value="1">软件部</option>
+                    <option value="2">策划部</option>
+                    <option value="3">运营部</option>
+                    <option value="4">美工部</option>
+                    <option value="0" selected></option>
+                </select>
+                <hr>
+                <hr>
+                <textarea name="introduce" rows="5" placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
+                <hr>
+                <a href="../html/index.html">back</a>
+                <input type="submit" value="next" name="next" class="button">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
