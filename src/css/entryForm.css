@@ -60,12 +60,20 @@ span {
     margin-left: 10px;
 }
 
-input.button,
-a {
-    display: block;
+input.button {
     width: 100px;
     color: #000;
-    font-size: 20px;
-    background-color: #099915;
-    text-align: center;
+    font-size: 15px;
+    background-color: #9fa8a0;
+    position: absolute;
+    bottom: 5%;
+    /* margin-top: 7%; */
+}
+
+.button1 {
+    left: 17%;
+}
+
+.button2 {
+    right: 17%;
 }
