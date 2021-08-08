@@ -8,12 +8,13 @@
     <title>报名表</title>
     <link rel="stylesheet" href="../css/entryForm.css">
     <link rel="stylesheet" href="../css/base.css">
+    <script type="text/javascript" src="../js/check.js"></script>
 </head>
 
 <body>
     <div class="page">
         <div class="sign_in">
-            <form action="../php/form.php" method="POST">
+            <form action="../php/form.php" method="POST" onsubmit="return checkAll(this)">
                 <hr>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;*姓名：&nbsp;&nbsp;&nbsp;</span>
                 <input type="text" name="name" id="name">
@@ -62,7 +63,7 @@
                 </select>
                 <hr>
                 <hr>
-                <textarea name="introduce" rows="5" placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
+                <textarea name="introduce" id="introduce" rows="5" placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
                 <hr>
                 <input type="reset" value="返回" name="back" onclick="window.location.href='index.html'" class="button button1">
                 <input type="submit" value="提交" name="next" class="button button2">

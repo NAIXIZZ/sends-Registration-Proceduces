@@ -17,7 +17,14 @@
         <form action="q8.php" method="post" onsubmit="return saveReport();">
             <input type="radio" name="q8" id="a" value="q9.php"><label for="a">是</label><br />
             <input type="radio" name="q8" id="b" value="q10.php"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php session_start();
+                                                                                        if ($_SESSION['q2'] == 'q8.php' and $_SESSION['q5'] != 'q8.php' and $_SESSION['q7'] != 'q8.php') {
+                                                                                            echo 'q2.php';
+                                                                                        } elseif ($_SESSION['q2'] != 'q8.php' and $_SESSION['q5'] == 'q8.php' and $_SESSION['q7'] != 'q8.php') {
+                                                                                            echo 'q5.php';
+                                                                                        } elseif ($_SESSION['q2'] != 'q8.php' and $_SESSION['q5'] != 'q8.php' and $_SESSION['q7'] == 'q8.php') {
+                                                                                            echo 'q7.php';
+                                                                                        } ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

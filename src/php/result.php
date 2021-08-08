@@ -31,6 +31,7 @@
     } elseif ($_SESSION[$ordinal][-1] == 'e') {
         $result = "经题目测试，小桑温馨提示您，<span>运营部</span>最适合您哦！";
     }
+    session_destroy();
     ?>
     <div class="page">
         <div class="result">

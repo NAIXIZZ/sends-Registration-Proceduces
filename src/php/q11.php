@@ -17,7 +17,14 @@
         <form action="q11.php" method="post" onsubmit="return saveReport();">
             <input type="radio" name="q11" id="a" value="q12.php"><label for="a">敲代码</label><br />
             <input type="radio" name="q11" id="b" value="result.phpf"><label for="b">Ps、Pr</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php session_start();
+                                                                                        if ($_SESSION['q3'] == 'q11.php' and $_SESSION['q6'] != 'q11.php' and $_SESSION['q10'] != 'q11.php') {
+                                                                                            echo 'q3.php';
+                                                                                        } elseif ($_SESSION['q3'] != 'q11.php' and $_SESSION['q6'] == 'q11.php' and $_SESSION['q10'] != 'q11.php') {
+                                                                                            echo 'q6.php';
+                                                                                        } elseif ($_SESSION['q3'] != 'q11.php' and $_SESSION['q6'] != 'q11.php' and $_SESSION['q10'] == 'q11.php') {
+                                                                                            echo 'q10.php';
+                                                                                        }  ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

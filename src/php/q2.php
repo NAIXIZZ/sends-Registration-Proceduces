@@ -19,7 +19,7 @@
             <input type="radio" name="q2" id="b" value="q6.php"><label for="b">Ps、Pr</label><br />
             <input type="radio" name="q2" id="c" value="q8.php"><label for="c">功能设计</label><br />
             <input type="radio" name="q2" id="d" value="q10.php"><label for="d">文案</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q1.php' ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

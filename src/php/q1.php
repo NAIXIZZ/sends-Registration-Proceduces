@@ -14,7 +14,7 @@
         <div class="question">
             <p>1.你是否具有探索互联网的热情？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
+        <form name="anser" action="q1.php" method="post" onsubmit="return saveReport();">
             <input type="radio" name="q1" id="a" value="q2.php"><label for="a">是</label><br />
             <input type="radio" name="q1" id="b" value="result.phpf"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='../html/index.html'" class="button button1">

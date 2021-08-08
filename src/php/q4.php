@@ -17,7 +17,7 @@
         <form action="q4.php" method="post" onsubmit="return saveReport();">
             <input type="radio" name="q4" id="a" value="result.phpd"><label for="a">是</label><br />
             <input type="radio" name="q4" id="b" value="q5.php"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q3.php'; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

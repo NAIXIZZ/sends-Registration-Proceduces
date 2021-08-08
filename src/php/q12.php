@@ -20,7 +20,7 @@
             <input type="radio" name="q12" id="c" value="result.phpc"><label for="c">界面设计</label><br />
             <input type="radio" name="q12" id="d" value="result.phpd"><label for="d">后台技术</label><br />
             <input type="radio" name="q12" id="e" value="result.phpe"><label for="e">宣传推广</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q11.php' ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

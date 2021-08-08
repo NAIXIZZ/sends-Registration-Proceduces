@@ -18,7 +18,7 @@
             <input type="radio" name="q5" id="a" value="result.phpb"><label for="a">是</label><br />
             <input type="radio" name="q5" id="b" value="q6.php"><label for="b">否，但会有界面设计的能力</label><br />
             <input type="radio" name="q5" id="d" value="q8.php"><label for="d">否，但会有对其具体功能的创意想法</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q4.php'; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
