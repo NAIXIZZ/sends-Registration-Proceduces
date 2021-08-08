@@ -14,16 +14,20 @@
         <div class="question">
             <p>7.如果给你布置了一个做新的App的设想，你会选择做什么？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="result.php"><label for="a">界面优化与布局</label><br />
-            <input type="radio" name="q1" id="b" value="q8.php"><label for="b">需求分析和功能设计</label><br />
+        <form action="q7.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q7" id="a" value="result.phpc"><label for="a">界面优化与布局</label><br />
+            <input type="radio" name="q7" id="b" value="q8.php"><label for="b">需求分析和功能设计</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q7'] = $_POST['q7']; 
+        if (strpos($_POST['q7'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q7'], "", -1);
+        } else {
+            $url = $_POST['q7'];
+        }
         Header("Location:$url");
         ?>
     </div>

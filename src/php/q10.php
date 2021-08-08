@@ -14,16 +14,20 @@
         <div class="question">
             <p>10.你是否喜欢并具有较强的文字编辑或写作能力？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="result.php"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="q11.php"><label for="b">否</label><br />
+        <form action="q10.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q10" id="a" value="result.phpe"><label for="a">是</label><br />
+            <input type="radio" name="q10" id="b" value="q11.php"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q10'] = $_POST['q10'];
+        if (strpos($_POST['q10'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q10'], "", -1);
+        } else {
+            $url = $_POST['q10'];
+        }
         Header("Location:$url");
         ?>
     </div>

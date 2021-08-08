@@ -14,16 +14,20 @@
         <div class="question">
             <p>3.你是否已经具有一定的编程基础？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="q4.php"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="q11.php"><label for="b">否</label><br />
+        <form action="q3.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q3" id="a" value="q4.php"><label for="a">是</label><br />
+            <input type="radio" name="q3" id="b" value="q11.php"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q3'] = $_POST['q3'];
+        if (strpos($_POST['q3'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q3'], "", -1);
+        } else {
+            $url = $_POST['q3'];
+        }
         Header("Location:$url");
         ?>
     </div>

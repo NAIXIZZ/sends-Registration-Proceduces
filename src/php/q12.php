@@ -14,18 +14,23 @@
         <div class="question">
             <p>12.如果有一个线上项目需要团队完成，你愿意做下面的哪一个任务？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a"><label for="a">前期策划</label><br />
-            <input type="radio" name="q1" id="b"><label for="b">软件开发</label><br />
-            <input type="radio" name="q1" id="c"><label for="c">界面设计</label><br />
-            <input type="radio" name="q1" id="d"><label for="d">后台技术</label><br />
-            <input type="radio" name="q1" id="e"><label for="e">宣传推广</label><br />
+        <form action="q12.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q12" id="a" value="result.phpa"><label for="a">前期策划</label><br />
+            <input type="radio" name="q12" id="b" value="result.phpb"><label for="b">软件开发</label><br />
+            <input type="radio" name="q12" id="c" value="result.phpc"><label for="c">界面设计</label><br />
+            <input type="radio" name="q12" id="d" value="result.phpd"><label for="d">后台技术</label><br />
+            <input type="radio" name="q12" id="e" value="result.phpe"><label for="e">宣传推广</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $url = "result.php";
+        $_SESSION['q12'] = $_POST['q12'];
+        if (strpos($_POST['q12'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q12'], "", -1);
+        } else {
+            $url = $_POST['q12'];
+        }
         Header("Location:$url");
         ?>
     </div>

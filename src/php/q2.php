@@ -14,18 +14,23 @@
         <div class="question">
             <p>2.你认为自己最（将）具备哪一项计算机技能？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="q3.php"><label for="a">敲代码</label><br />
-            <input type="radio" name="q1" id="b" value="q6.php"><label for="b">Ps、Pr</label><br />
-            <input type="radio" name="q1" id="c" value="q8.php"><label for="c">功能设计</label><br />
-            <input type="radio" name="q1" id="d" value="q10.php"><label for="d">文案</label><br />
+        <form action="q2.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q2" id="a" value="q3.php"><label for="a">敲代码</label><br />
+            <input type="radio" name="q2" id="b" value="q6.php"><label for="b">Ps、Pr</label><br />
+            <input type="radio" name="q2" id="c" value="q8.php"><label for="c">功能设计</label><br />
+            <input type="radio" name="q2" id="d" value="q10.php"><label for="d">文案</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q2'] = $_POST['q2'];
+        if (strpos($_POST['q2'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q2'], "", -1);
+        } else {
+            $url = $_POST['q2'];
+            echo $url;
+        }
         Header("Location:$url");
         ?>
     </div>

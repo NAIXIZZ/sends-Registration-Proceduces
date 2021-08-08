@@ -14,16 +14,20 @@
         <div class="question">
             <p>11.你是否具有较强的自学能力并愿意学习互联网相关技能？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="去2.php"><label for="a">敲代码</label><br />
-            <input type="radio" name="q1" id="b" value="result.php"><label for="b">Ps、Pr</label><br />
+        <form action="q11.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q11" id="a" value="q12.php"><label for="a">敲代码</label><br />
+            <input type="radio" name="q11" id="b" value="result.phpf"><label for="b">Ps、Pr</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q11'] = $_POST['q11'];
+        if (strpos($_POST['q11'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q11'], "", -1);
+        } else {
+            $url = $_POST['q11'];
+        }
         Header("Location:$url");
         ?>
     </div>

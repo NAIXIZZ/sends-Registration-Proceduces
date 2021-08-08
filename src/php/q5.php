@@ -14,17 +14,21 @@
         <div class="question">
             <p>5.你是否想做小程序或网站的开发？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="result.php"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="q6.php"><label for="b">否，但会有界面设计的能力</label><br />
-            <input type="radio" name="q1" id="d" value="q8.php"><label for="d">否，但会有对其具体功能的创意想法</label><br />
+        <form action="q5.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q5" id="a" value="result.phpb"><label for="a">是</label><br />
+            <input type="radio" name="q5" id="b" value="q6.php"><label for="b">否，但会有界面设计的能力</label><br />
+            <input type="radio" name="q5" id="d" value="q8.php"><label for="d">否，但会有对其具体功能的创意想法</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q5'] = $_POST['q5'];
+        if (strpos($_POST['q5'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q5'], "", -1);
+        } else {
+            $url = $_POST['q5'];
+        }
         Header("Location:$url");
         ?>
     </div>

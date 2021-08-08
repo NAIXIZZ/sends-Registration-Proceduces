@@ -14,16 +14,20 @@
         <div class="question">
             <p>4.是否对充当“安全卫士”这个角色感兴趣？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="result.php"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="q5.php"><label for="b">否</label><br />
+        <form action="q4.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q4" id="a" value="result.phpd"><label for="a">是</label><br />
+            <input type="radio" name="q4" id="b" value="q5.php"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q4'] = $_POST['q4'];
+        if (strpos($_POST['q4'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q4'], "", -1);
+        } else {
+            $url = $_POST['q4'];
+        }
         Header("Location:$url");
         ?>
     </div>

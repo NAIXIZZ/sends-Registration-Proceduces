@@ -14,16 +14,20 @@
         <div class="question">
             <p>6.你是否已经具有Photoshop的基本操作能力？</p>
         </div>
-        <form action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="q7.php"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="q11.php"><label for="b">否</label><br />
+        <form action="q6.php" method="post" onsubmit="return saveReport();">
+            <input type="radio" name="q6" id="a" value="q7.php"><label for="a">是</label><br />
+            <input type="radio" name="q6" id="b" value="q11.php"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php
         session_start();
-        $_SESSION['url'] = $_POST['q1'];
-        $url = $_SESSION['url'];
+        $_SESSION['q6'] = $_POST['q6'];
+        if (strpos($_POST['q6'], 'result.php') !== false) {
+            $url = substr_replace($_POST['q6'], "", -1);
+        } else {
+            $url = $_POST['q6'];
+        }
         Header("Location:$url");
         ?>
     </div>
