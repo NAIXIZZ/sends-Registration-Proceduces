@@ -32,6 +32,7 @@
         }
 
         a {
+            text-decoration: none;
             font-size: 18px;
             color: #000;
         }
@@ -39,11 +40,11 @@
     <div class="page">
         <?php
         // 连接数据库、设置字符集
-        $link = @mysqli_connect('localhost', 'root', '123456', 'information')
+        $link = @mysqli_connect('localhost', 'root', 'hqusends', 'information')
             or die("无法连接到服务器");
         mysqli_set_charset($link, 'utf8');
         // 获取查询结果集
-        if ($_POST['name'] != '' and $_POST['id'] != '' and $_POST['phone'] != '' and $_POST['qq'] != '' and $_POST['campus'] != 0 and $_POST['academy'] != '' and $_POST['profession'] != '' and $_POST['firstVolunteer'] != 0 and $_POST['secondVolunteer'] != 0) {
+        if ($_POST['name'] != '') {
             $name = $_POST['name'];
             $id = $_POST['id'];
             $phone = $_POST['phone'];
@@ -58,14 +59,19 @@
             mysqli_query($link, $sq_add);
             $error = mysqli_error($link);
             if (strpos($error, 'Duplicate') !== false) {
-                echo "<p>您已经报过名了</P><a href=\"../html/entryForm.html\">去抽奖</a>";
+                echo "<p>您已经报过名了</P><a href=\"lottery.php\">去抽奖</a>";
             } else {
-                echo "<p>报名成功</p><a href=\"../html/entryForm.html\">去抽奖</a>";
+                $sq_add_lottery = "INSERT INTO lottery(id,occasion)
+        VALUES('$id',1)";
+                mysqli_query($link, $sq_add_lottery);
+                echo "<p>报名成功</p><a href=\"lottery.php\">去抽奖</a>";
             }
             mysqli_close($link);
         } else {
             echo "<p>您有部分信息未填写，请填写完整后再次提交</p><a href=\"../html/entryForm.html\" onclick=\"fill()\">返回提交</a>";
         }
+        session_start();
+        $_SESSION['id'] = $id;
         ?>
     </div>
 </body>

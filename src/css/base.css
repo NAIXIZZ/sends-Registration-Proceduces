@@ -11,10 +11,6 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
 textarea,
 input {
     outline: none;
