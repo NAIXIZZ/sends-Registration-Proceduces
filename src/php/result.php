@@ -31,7 +31,6 @@
     } elseif ($_SESSION[$ordinal][-1] == 'e') {
         $result = "经题目测试，小桑温馨提示您，<span>运营部</span>最适合您哦！";
     }
-    session_destroy();
     ?>
     <div class="page">
         <div class="result">
@@ -70,8 +69,8 @@
             </div>
         </div>
         <div class="button">
-            <button onclick="window.location.href='../html/index.html'" class="button button1">回首页</button>
-            <button onclick="window.location.href='../html/entryForm.html'" class="button button2">去报名</button>
+            <button onclick="window.location.href='enterPageControl.php'" class="button button1">回首页</button>
+            <button onclick="window.location.href='entryForm.php'" class="button button2">去报名</button>
         </div>
     </div>
 </body>

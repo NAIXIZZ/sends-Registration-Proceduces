@@ -35,6 +35,7 @@
             text-decoration: none;
             font-size: 18px;
             color: #000;
+            display: block;
         }
     </style>
     <div class="page">
@@ -54,24 +55,29 @@
             $profession = $_POST['profession'];
             $first = $_POST['firstVolunteer'];
             $second = $_POST['secondVolunteer'];
-            $sq_add = "INSERT INTO information(s_name,id,phone,qq,campus,academy,profession,firstVolunteer,secondVolunteer)
-        VALUES('$name','$id','$phone','$qq','$campus','$academy','$profession','$first','$second')";
+            $introduce = $_POST['introduce'];
+            $sq_add = "INSERT INTO information(s_name,id,phone,qq,campus,academy,profession,firstVolunteer,secondVolunteer,introduce)
+        VALUES('$name','$id','$phone','$qq','$campus','$academy','$profession','$first','$second','$introduce')";
             mysqli_query($link, $sq_add);
             $error = mysqli_error($link);
             if (strpos($error, 'Duplicate') !== false) {
-                echo "<p>您已经报过名了</P><a href=\"lottery.php\">去抽奖</a>";
+                $sq_update = "UPDATE `information` SET `s_name`='$name',`phone`='$phone',`qq`='$qq',`campus`='$campus',`academy`='$academy',`profession`='$profession',`firstVolunteer`='$first',`secondVolunteer`='$second',`introduce`='$introduce' where `id` = '$id'";
+                mysqli_query($link, $sq_update);
+                echo "<p>更改成功</P><a href=\"lotteryFront.php\">去抽奖</a></a>";
             } else {
                 $sq_add_lottery = "INSERT INTO lottery(id,occasion)
         VALUES('$id',1)";
                 mysqli_query($link, $sq_add_lottery);
-                echo "<p>报名成功</p><a href=\"lottery.php\">去抽奖</a>";
+                echo "<p>报名成功</p><a href=\"lotteryFront.php\">去抽奖</a>";
             }
             mysqli_close($link);
         } else {
-            echo "<p>您有部分信息未填写，请填写完整后再次提交</p><a href=\"../html/entryForm.html\" onclick=\"fill()\">返回提交</a>";
+            echo "<p>您有部分信息未填写，请填写完整后再次提交</p><a href=\"entryForm.php\" onclick=\"fill()\">返回提交</a>";
         }
         session_start();
         $_SESSION['id'] = $id;
+        $_SESSION['first'] = $first;
+        $_SESSION['second'] = $second;
         ?>
     </div>
 </body>

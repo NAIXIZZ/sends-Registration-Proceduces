@@ -18,7 +18,7 @@
         <form name="anser" action="q1.php" method="post" onsubmit="return saveReport();">
             <input type="radio" name="q1" id="a" value="q2.php"><label for="a">是</label><br />
             <input type="radio" name="q1" id="b" value="result.phpf"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='../html/index.html'" class="button button1">
+            <input type="reset" value="back" name="back" onclick="window.location.href='enterPageControl.php'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
         <?php

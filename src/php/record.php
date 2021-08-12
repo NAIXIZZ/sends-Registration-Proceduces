@@ -66,7 +66,7 @@
         echo "获奖记录：", $gift;
         ?>
         <div class="btn">
-            <button class="back" onclick="window.location.href='lottery.php'">返回</button>
+            <button class="back" onclick="window.location.href='lotteryFront.php'">返回</button>
         </div>
     </div>
 </body>

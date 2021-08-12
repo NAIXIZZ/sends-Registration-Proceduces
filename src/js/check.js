@@ -1,9 +1,8 @@
 function checkAll(form) {
     var regName = new RegExp("[a-z]");
     var regId = new RegExp("^\\d{10}$");
-    var regPhone = new RegExp("^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$");
+    var regPhone = new RegExp("^1\\d{10}$");
     var regQQ = new RegExp("[1-9][0-9]{4,}");
-    var regAcademy = new RegExp("[a-z]");
     var regProfession = new RegExp("[a-z]");
     if (form.name.value == '') {
         alert("请输入姓名");
@@ -47,14 +46,11 @@ function checkAll(form) {
         form.campus.focus();
         return false;
     }
-    if (form.academy.value == '') {
-        alert("请输入学院");
+    var academy = document.getElementById("academy").value;
+    if (academy == 0) {
+        alert("请选择学院");
         form.academy.focus();
         return false;
-    } else if (regAcademy.test(form.academy.value)) {
-        alert("请输入正确的学院名");
-        form.academy.focus();
-        return false
     }
     if (form.profession.value == '') {
         alert("请输入专业名");
