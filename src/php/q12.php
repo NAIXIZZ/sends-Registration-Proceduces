@@ -16,11 +16,11 @@
             <p>12.如果有一个线上项目需要团队完成，你愿意做下面的哪一个任务？</p>
         </div>
         <form action="q12.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q12" id="a" value="result.phpa"><label for="a">前期策划</label><br />
-            <input type="radio" name="q12" id="b" value="result.phpb"><label for="b">软件开发</label><br />
-            <input type="radio" name="q12" id="c" value="result.phpc"><label for="c">界面设计</label><br />
-            <input type="radio" name="q12" id="d" value="result.phpd"><label for="d">后台技术</label><br />
-            <input type="radio" name="q12" id="e" value="result.phpe"><label for="e">宣传推广</label><br />
+            <input type="radio" name="q12" id="a" value="result.phpa"onclick="save()"><label for="a">前期策划</label><br />
+            <input type="radio" name="q12" id="b" value="result.phpb"onclick="save()"><label for="b">软件开发</label><br />
+            <input type="radio" name="q12" id="c" value="result.phpc"onclick="save()"><label for="c">界面设计</label><br />
+            <input type="radio" name="q12" id="d" value="result.phpd"onclick="save()"><label for="d">后台技术</label><br />
+            <input type="radio" name="q12" id="e" value="result.phpe"onclick="save()"><label for="e">宣传推广</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q11.php' ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
@@ -34,6 +34,29 @@
         }
         Header("Location:$url");
         ?>
+        <script language="javascript" type="text/javascript">
+            function save() {
+                var radios = document.getElementsByName("q12");
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        document.cookie = 'q12index=' + i;
+                    }
+                }
+            }
+
+            window.onload = function() {
+                var cookies = document.cookie;
+                if (cookies != "") {
+                    cookies = "{\"" + cookies + "\"}";
+                    cookies = cookies.replace(/\s*/g, "").replace(/=/g, '":"').replace(/;/g, '","');
+                    var json = eval("(" + cookies + ")"); //将coolies转成json对象
+                    document.getElementsByName("q12")[json.q12index].checked = true;
+                } else {
+                    save();
+                }
+
+            }
+        </script>
     </div>
 </body>
 

@@ -16,8 +16,8 @@
             <p>4.是否对充当“安全卫士”这个角色感兴趣？</p>
         </div>
         <form action="q4.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q4" id="a" value="result.phpd"><label for="a">是</label><br />
-            <input type="radio" name="q4" id="b" value="q5.php"><label for="b">否</label><br />
+            <input type="radio" name="q4" id="a" value="result.phpd" onclick="save()"><label for="a">是</label><br />
+            <input type="radio" name="q4" id="b" value="q5.php" onclick="save()"><label for="b">否</label><br />
             <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q3.php'; ?>'" class="button button1">
             <input type="submit" value="next" name="next" class="button button2">
         </form>
@@ -31,6 +31,29 @@
         }
         Header("Location:$url");
         ?>
+        <script language="javascript" type="text/javascript">
+            function save() {
+                var radios = document.getElementsByName("q4");
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        document.cookie = 'q4index=' + i;
+                    }
+                }
+            }
+
+            window.onload = function() {
+                var cookies = document.cookie;
+                if (cookies != "") {
+                    cookies = "{\"" + cookies + "\"}";
+                    cookies = cookies.replace(/\s*/g, "").replace(/=/g, '":"').replace(/;/g, '","');
+                    var json = eval("(" + cookies + ")"); //将coolies转成json对象
+                    document.getElementsByName("q4")[json.q4index].checked = true;
+                } else {
+                    save();
+                }
+
+            }
+        </script>
     </div>
 </body>
 
