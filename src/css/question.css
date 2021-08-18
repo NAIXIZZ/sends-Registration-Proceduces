@@ -10,7 +10,6 @@
     min-width: 320px;
     max-width: 450px;
     height: 100vh;
-    /* text-align: center; */
     margin: 0 auto;
     background-image: url('../../img/qback.png');
     background-repeat: no-repeat;
@@ -24,14 +23,7 @@
     padding: 90px 30px 60px;
 }
 
-/* p {
-    padding-left: 1%;
-} */
-
 .question {
-    /* border: 1px #838181 solid; */
-    /* margin-top: 10%;
-    margin-bottom: 5%; */
     width: 85%;
     height: 20%;
     display: flex;
@@ -50,7 +42,6 @@
     margin-left: 20px;
 }
 
-
 form {
     /* margin-left: 3%; */
     width: 85%;
@@ -64,7 +55,6 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 
 button{
@@ -73,8 +63,6 @@ button{
     margin-bottom: 20px;
     line-height: 30px;
     background: #fff2f247;
-    /* opacity: 0.2;
-    border: 1px solid #FFF2F2; */
     border-radius: 10px;
     text-align: left;
     

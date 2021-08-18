@@ -36,7 +36,6 @@
                                                                                         }  ?>'" class="oper">
             <input type="submit" value="Next" name="next" class="oper">
             </div>
-            
         </form>
         <?php
         session_start();
@@ -68,7 +67,6 @@
                 } else {
                     save();
                 }
-
             }
         </script>
     </div>

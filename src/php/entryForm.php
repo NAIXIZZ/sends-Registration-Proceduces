@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>报名表</title>
+    <title>桑梓纳新报名页面</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -146,8 +146,7 @@
                         <div class="circle circle3"></div>
                         <span>介绍你自己</span>
                     </div>
-                    <!-- <input type="text" name="introduce" id="introduce"> -->
-                    <textarea name="introduce" class="introduce" rows="1"
+                    <textarea name="introduce" id="introduce" class="introduce" rows="1"
                         placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
                 </div>
                 <div class="operBar">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/question.css">
     <script type="text/javascript" src="../js/saveReport.js"></script>
 </head>
@@ -29,7 +29,6 @@
             </div>
             <!-- <input type="radio" name="q9" id="a" value="result.phpa" onclick="save()"><label for="a">是</label><br />
             <input type="radio" name="q9" id="b" value="q10.php" onclick="save()"><label for="b">否</label><br /> -->
-            
         </form>
         <?php
         session_start();
@@ -61,7 +60,6 @@
                 } else {
                     save();
                 }
-
             }
         </script>
     </div>

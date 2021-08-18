@@ -2,7 +2,6 @@
     min-width: 320px;
     max-width: 450px;
     height: 100vh;
-    /* text-align: center; */
     margin: 0 auto;
     background-image: url('../../img/qback.png');
     background-repeat: no-repeat;
@@ -52,7 +51,7 @@ form {
 }
 
 .before {
-    width: 42%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;

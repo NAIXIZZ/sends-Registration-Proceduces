@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/question.css">
     <script type="text/javascript" src="../js/saveReport.js"></script>
 </head>
@@ -23,8 +23,6 @@
                 <button type="radio" name="q1" id="b" value="result.phpf" onclick="save()"><label for="b">否。</label><br />
                 </button>
             </div>
-            
-
             <!-- <input type="radio" name="q1" id="a" value="q2.php" onclick="save()"><label for="a">是</label><br />
             <input type="radio" name="q1" id="b" value="result.phpf" onclick="save()"><label for="b">否</label><br /> -->
             <div class="operBar">
@@ -32,7 +30,6 @@
                 class="oper">
             <input type="submit" value="Next" name="next" class="oper">
             </div>
-            
         </form>
         <?php
         session_start();
@@ -64,7 +61,6 @@
                 } else {
                     save();
                 }
-
             }
         </script>
 </body>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/intoAgain.css">
 </head>
@@ -57,7 +57,6 @@
         <div class="info">
             <p>以下展示您的志愿</p>
             <p>预计将于9月19/20日展开面试静候短信通知。</p>
-            <!-- 小桑温馨提示您：您之前填报的第一志愿为<?php echo $fv ?>,第二志愿为<?php echo $sv ?>。预计将于9月19/20日进行面试，具体事项请等短信通知哦！ -->
         </div>
         <div class="introduce">
             <?php
