@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>幸运抽奖</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/lottery.css">
     <!-- <script type="text/javascript" src="../js/lottery.js"></script> -->
