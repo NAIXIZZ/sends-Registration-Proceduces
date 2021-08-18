@@ -18,9 +18,9 @@
         </div>
         <form action="q11.php" method="post" onsubmit="return saveReport();">
             <div class="choose">
-                <button type="radio" name="q11" id="a" value="q12.php" onclick="save()"><label for="a">敲代码</label><br />
+                <button type="radio" name="q11" id="a" value="q12.php" onclick="save()"><label for="a">是。</label><br />
                 </button>
-                <button type="radio" name="q11" id="b" value="result.phpf" onclick="save()"><label for="b">Ps、Pr</label><br />
+                <button type="radio" name="q11" id="b" value="result.phpf" onclick="save()"><label for="b">否。</label><br />
                 </button>
             </div>
             <!-- <input type="radio" name="q11" id="a" value="q12.php"onclick="save()"><label for="a">敲代码</label><br />
