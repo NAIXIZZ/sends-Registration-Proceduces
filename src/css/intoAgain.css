@@ -1,36 +1,117 @@
-body {
-    background-color: #f5f5f5;
-}
-
 .page {
-    min-width: 320px;
-    max-width: 450px;
-    height: 667px;
-    /* text-align: center; */
-    margin: 0 auto;
-    position: relative;
+        min-width: 320px;
+        max-width: 450px;
+        height: 100vh;
+        /* text-align: center; */
+        margin: 0 auto;
+        background-image: url('../../img/qback.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 90px 50px 60px;
 }
 
 .welcome {
-    margin: 0 auto;
+    /* margin: 0 auto;
     width: 60%;
     height: 20%;
     border: 1.5px #000 solid;
     border-radius: 100%;
     text-align: center;
     padding-top: 13%;
-    margin-bottom: 10%;
+    margin-bottom: 10%; */
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 7px;
+    text-align: center;
 }
 
 .info {
-    margin: 0 auto;
+    /* margin: 0 auto;
     margin-bottom: 10%;
     width: 65%;
     height: auto;
-    border: 1px rgb(105, 105, 105) solid;
+    border: 1px rgb(105, 105, 105) solid; */
+    width: 100%;
+    padding: 10px 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    line-height: 30px;
 }
 
-.section {
+.introduce{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    background-image: linear-gradient(#273F6C, #44576F);
+    border-radius: 15px;
+}
+
+.section2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background-image: linear-gradient(#7F3A30, #9C3739);
+    border-radius: 15px;
+}
+
+.top{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.top-l{
+    padding-top: 5px;
+}
+
+.top-r{
+    font-size: 25px;
+}
+
+.information{
+    color: #caccd8;
+    font-size: 12px;
+}
+
+.operBar{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.oper{
+    background: none;
+    border: 0;
+    color: #637BCE;
+    font-size: 17px;
+}
+
+/* .section {
     color: #ff0000;
     border: 1px rgb(105, 105, 105) solid;
     padding-top: 3px;
@@ -73,4 +154,4 @@ button.button {
 
 .button2 {
     right: 17%;
-}
+} */

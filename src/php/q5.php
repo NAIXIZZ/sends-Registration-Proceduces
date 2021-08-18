@@ -13,14 +13,30 @@
 <body>
     <div class="page">
         <div class="question">
-            <p>5.你是否想做小程序或网站的开发？</p>
+            <p class="q">Q</p>
+            <p class="ques">你是否想做小程序或网站的开发？</p>
         </div>
         <form action="q5.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q5" id="a" value="result.phpb" onclick="save()"><label for="a">是</label><br />
+            <div class="choose">
+                <button type="radio" name="q5" id="a" value="result.phpb" onclick="save()"><label
+                        for="a">是。</label><br />
+                </button>
+                <button type="radio" name="q5" id="b" value="q6.php" onclick="save()"><label
+                        for="b">否，但会有界面设计的能力。</label><br />
+                </button>
+                <button type="radio" name="q5" id="d" value="q8.php" onclick="save()"><label
+                        for="d">否，但会有对其具体功能的创意想法。</label><br />
+                </button>
+            </div>
+            <!-- <input type="radio" name="q5" id="a" value="result.phpb" onclick="save()"><label for="a">是</label><br />
             <input type="radio" name="q5" id="b" value="q6.php" onclick="save()"><label for="b">否，但会有界面设计的能力</label><br />
-            <input type="radio" name="q5" id="d" value="q8.php" onclick="save()"><label for="d">否，但会有对其具体功能的创意想法</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q4.php'; ?>'" class="button button1">
-            <input type="submit" value="next" name="next" class="button button2">
+            <input type="radio" name="q5" id="d" value="q8.php" onclick="save()"><label for="d">否，但会有对其具体功能的创意想法</label><br /> -->
+            <div class="operBar">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q4.php'; ?>'"
+                    class="oper">
+                <input type="submit" value="Next" name="next" class="oper">
+            </div>
+
         </form>
         <?php
         session_start();
@@ -42,7 +58,7 @@
                 }
             }
 
-            window.onload = function() {
+            window.onload = function () {
                 var cookies = document.cookie;
                 if (cookies != "") {
                     cookies = "{\"" + cookies + "\"}";

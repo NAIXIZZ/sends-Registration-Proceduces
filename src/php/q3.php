@@ -13,13 +13,24 @@
 <body>
     <div class="page">
         <div class="question">
-            <p>3.你是否已经具有一定的编程基础？</p>
+            <p class="q">Q</p>
+            <p class="ques">你是否已经具有一定的编程基础？</p>
         </div>
         <form action="q3.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q3" id="a" value="q4.php" onclick="save()"><label for="a">是</label><br />
-            <input type="radio" name="q3" id="b" value="q11.php" onclick="save()"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q2.php'; ?>'" class="button button1">
-            <input type="submit" value="next" name="next" class="button button2">
+            <div class="choose">
+                <button type="radio" name="q3" id="a" value="q4.php" onclick="save()"><label for="a">是。</label><br />
+                </button>
+                <button type="radio" name="q3" id="b" value="q11.php" onclick="save()"><label for="b">否。</label><br />
+                </button>
+            </div>
+            <!-- <input type="radio" name="q3" id="a" value="q4.php" onclick="save()"><label for="a">是</label><br />
+            <input type="radio" name="q3" id="b" value="q11.php" onclick="save()"><label for="b">否</label><br /> -->
+            <div class="operBar">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q2.php' ?>'"
+                    class="oper">
+                <input type="submit" value="Next" name="next" class="oper">
+            </div>
+
         </form>
         <?php
         session_start();
@@ -41,7 +52,7 @@
                 }
             }
 
-            window.onload = function() {
+            window.onload = function () {
                 var cookies = document.cookie;
                 if (cookies != "") {
                     cookies = "{\"" + cookies + "\"}";

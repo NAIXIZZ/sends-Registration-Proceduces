@@ -13,13 +13,23 @@
 <body>
     <div class="page">
         <div class="question">
-            <p>9.在不看手机的情况下你是否能对最经常使用的一个App的界面和功能做出描述？</p>
+            <p class="q">Q</p>
+            <p class="ques">在不看手机的情况下你是否能对最经常使用的一个App的界面和功能做出描述？</p>
         </div>
         <form action="q9.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q9" id="a" value="result.phpa" onclick="save()"><label for="a">是</label><br />
-            <input type="radio" name="q9" id="b" value="q10.php" onclick="save()"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q8.php'; ?>'" class="button button1">
-            <input type="submit" value="next" name="next" class="button button2">
+            <div class="choose">
+                <button type="radio" name="q9" id="a" value="result.phpa" onclick="save()"><label for="a">是。</label><br />
+                </button>
+                <button type="radio" name="q9" id="b" value="q10.php" onclick="save()"><label for="b">否。</label><br />
+                </button>
+            </div>
+            <div class="operBar">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q8.php'; ?>'" class="oper">
+            <input type="submit" value="Next" name="next" class="oper">
+            </div>
+            <!-- <input type="radio" name="q9" id="a" value="result.phpa" onclick="save()"><label for="a">是</label><br />
+            <input type="radio" name="q9" id="b" value="q10.php" onclick="save()"><label for="b">否</label><br /> -->
+            
         </form>
         <?php
         session_start();
